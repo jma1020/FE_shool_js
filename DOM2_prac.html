@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .bo {
+            width: 500px;
+            height: 500px;
+            background-color: black;
+        }
+
+
+        .red {
+            background-color: red;
+        }
+
+        .blue  {
+            background-color: blue;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="bo"></div>
+
+    <div class="box22">
+        <button class="one">asdsadsad</button>
+        <button class="two">sadsadsa</button>
+        <button class="three">sadsadsa</button>
+    </div>
+
+    <script>
+        const btn1 = document.querySelector(".box22")
+        const box = document.querySelector('.bo')
+
+
+        btn1.firstElementChild.addEventListener('click',()=>box.classList.add('red'))
+       
+
+       
+
+        btn1.lastElementChild.addEventListener('click',() => box.classList.add('blue'))
+
+        // console.log(btn1.children[])
+        console.log(btn1.firstElementChild)
+
+
+        console.log(btn1.children)
+        
+        for (let i of btn1.children){
+            console.log(i)
+        }
+        
+        
+        // btn1.childElementCount(2).addEventListener('click',() => console.log("sadsadsa"))
+    </script>
+</body>
+</html>
