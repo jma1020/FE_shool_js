@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .bo {
+            width: 500px;
+            height: 500px;
+            background-color: black;
+        }
+
+
+        .red {
+            background-color: red;
+        }
+
+        .blue  {
+            background-color: blue;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="bo"></div>
+
+    <div class="box22">
+        <button class="one">asdsadsad</button>
+        <button class="two">sadsadsa</button>
+        <button class="three">sadsadsa</button>
+    </div>
+
+    <script>
+        const btn1 = document.querySelector(".box22")
+        const box = document.querySelector('.bo')
+
+        const bb = document.querySelectorAll("button")
+
+        
+
+        btn1.firstElementChild.addEventListener('click',()=>box.classList.add('red'))
+
+        btn1.lastElementChild.addEventListener('click',() => box.classList.add('blue'))
+
+        
+        
+
+        // console.log(btn1.children[])
+        console.log(btn1.firstElementChild)
+
+
+        console.log(btn1.children)
+        
+        function ss() {
+            [...btn1.children].forEach
+        }
+
+        let vv=[1,2,3,4];
+        [...vv]
+        
+        
+        //맨처음에는 btn1.children이 forEach가 안먹길래 for of를 써봤다...
+        // 근데 for of가 작동했다,,  어 그럼 HTMLCollection은  유사배열은 아닌건가?? 생각이 들었습니다...
+
+        // 더나아가서 forEach 안먹었던게 음.. 뭐 없을까해서 HTMLCollection변환을 보고  저렇게 array로 감싸봤는데 실제로 저렇게도 많이쓰나요???
+        let array = [...btn1.children]
+        
+        array.forEach(e => console.log(e))
+        
+        for (let i of btn1.children){
+            console.log(i)
+        }
+        
+        
+        // btn1.childElementCount(2).addEventListener('click',() => console.log("sadsadsa"))
+    </script>
+</body>
+</html>
