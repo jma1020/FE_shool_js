@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+</head>
+
+<body>
+    <script>
+        const userdb = [
+            {
+                "_id": "61b05e52d4ada3cd821c66ef",
+                "id": "Riley",
+                "pw": "10223b1e-8ea9-4bd7-8ea8-005e3ef6dd31",
+                "index": 0,
+                "picture": "http://placehold.it/32x32",
+                "age": 26,
+                "eyeColor": "green",
+                "name": "Sanchez Rhodes",
+                "gender": "male",
+                "company": "TECHMANIA",
+                "email": "sanchezrhodes@techmania.com",
+                "phone": "+1 (899) 497-2009",
+                "address": "890 Seigel Street, Cochranville, Minnesota, 6639",
+                "grade": "새싹"
+            },
+            {
+                "_id": "61b05e52e2ff71e16d9974e5",
+                "id": "hojun",
+                "pw": "1234",
+                "index": 1,
+                "picture": "http://placehold.it/32x32",
+                "age": 36,
+                "eyeColor": "green",
+                "name": "Tamika Gillespie",
+                "gender": "female",
+                "company": "DANCITY",
+                "email": "tamikagillespie@dancity.com",
+                "phone": "+1 (899) 468-2985",
+                "address": "788 Crystal Street, Stockwell, Illinois, 7388",
+                "grade": "관리자"
+            },
+            {
+                "_id": "61b05e526bf201bcb45ede68",
+                "id": "Kathryn",
+                "pw": "8b01110a-1528-4ad7-a65e-1c5174435441",
+                "index": 2,
+                "picture": "http://placehold.it/32x32",
+                "age": 23,
+                "eyeColor": "brown",
+                "name": "Ferrell Harrison",
+                "gender": "male",
+                "company": "SENTIA",
+                "email": "ferrellharrison@sentia.com",
+                "phone": "+1 (846) 578-3311",
+                "address": "674 Carroll Street, Maplewood, Nevada, 7193",
+                "grade": "골드"
+            },
+            {
+                "_id": "61b05e5202c16f661efe9ff8",
+                "id": "Chen",
+                "pw": "89853990-aaba-4b0f-a589-6aa44bc3f9b9",
+                "index": 3,
+                "picture": "http://placehold.it/32x32",
+                "age": 39,
+                "eyeColor": "green",
+                "name": "Carlson Lambert",
+                "gender": "male",
+                "company": "GYNKO",
+                "email": "carlsonlambert@gynko.com",
+                "phone": "+1 (814) 597-3826",
+                "address": "391 Adelphi Street, Chase, New Hampshire, 4651",
+                "grade": "골드"
+            },
+            {
+                "_id": "61b05e52297d6227ca74c09e",
+                "id": "Dillon",
+                "pw": "e7d55d39-7b93-4930-a2e7-739a2ae421c6",
+                "index": 4,
+                "picture": "http://placehold.it/32x32",
+                "age": 40,
+                "eyeColor": "brown",
+                "name": "Georgina Jimenez",
+                "gender": "female",
+                "company": "CINESANCT",
+                "email": "georginajimenez@cinesanct.com",
+                "phone": "+1 (892) 459-3411",
+                "address": "209 Brevoort Place, Graniteville, Wyoming, 9124",
+                "grade": "일반"
+            },
+            {
+                "_id": "61b05e523e147611192805d2",
+                "id": "Paige",
+                "pw": "117f3fc0-de31-42e7-b202-2562d907d8de",
+                "index": 5,
+                "picture": "http://placehold.it/32x32",
+                "age": 24,
+                "eyeColor": "brown",
+                "name": "Skinner Flowers",
+                "gender": "male",
+                "company": "FISHLAND",
+                "email": "skinnerflowers@fishland.com",
+                "phone": "+1 (819) 468-2816",
+                "address": "465 Elliott Place, Weeksville, Maine, 3387",
+                "grade": "다이아몬드"
+            },
+            {
+                "_id": "61b05e5286c3bf37267195af",
+                "id": "Maritza",
+                "pw": "3a38a3a4-fded-4f48-9d8a-56d3c5202365",
+                "index": 6,
+                "picture": "http://placehold.it/32x32",
+                "age": 34,
+                "eyeColor": "brown",
+                "name": "Camille Orr",
+                "gender": "female",
+                "company": "ZENTIX",
+                "email": "camilleorr@zentix.com",
+                "phone": "+1 (957) 452-2988",
+                "address": "724 Hicks Street, Cornucopia, Massachusetts, 3336",
+                "grade": "골드"
+            },
+            {
+                "_id": "61b05e52691702e99bddd00c",
+                "id": "Tamara",
+                "pw": "fea59fcd-51ca-4ace-b9cf-8e1186d0412b",
+                "index": 7,
+                "picture": "http://placehold.it/32x32",
+                "age": 21,
+                "eyeColor": "green",
+                "name": "Melissa Rutledge",
+                "gender": "female",
+                "company": "COREPAN",
+                "email": "melissarutledge@corepan.com",
+                "phone": "+1 (834) 469-2661",
+                "address": "776 Vanderbilt Street, Gorst, Rhode Island, 3405",
+                "grade": "일반"
+            },
+            {
+                "_id": "61b05e529a019ae7c3cbdf5f",
+                "id": "Ava",
+                "pw": "440f30cb-5940-44a6-8c08-e1c9d43f0dac",
+                "index": 8,
+                "picture": "http://placehold.it/32x32",
+                "age": 31,
+                "eyeColor": "brown",
+                "name": "Foley Glass",
+                "gender": "male",
+                "company": "XURBAN",
+                "email": "foleyglass@xurban.com",
+                "phone": "+1 (834) 593-3732",
+                "address": "295 Colonial Road, Longoria, Ohio, 1102",
+                "grade": "실버"
+            }
+        ]
+
+            //콜백헬 만들기
+        class GetUserData {
+            login(아이디, 비밀번호, 성공, 실패) {
+                const data = userdb.find(user => user.id === 아이디 && user.pw === 비밀번호);
+                if(data){
+                    성공(아이디)
+                } else {
+                    실패(new Error('로그인 실패!'))
+                }
+            }
+            getUserDataSet(이용자, 성공, 실패) {
+                const data = userdb.find(user => user.id === 이용자);
+
+                if(data) {
+                    성공({
+                        id : data.id,
+                        picture : data.picture,
+                        name : data.name,
+                        company : data.company,
+                        email : data.email,
+                        grade : data.grade,
+                    })
+                } else {
+                    실패(new Error('데이터 로드 실패'))
+                }
+            }
+        }
+
+        const userData = new GetUserData();
+        const id = 'hojun';
+        const pw = '1234'
+        userData.login(
+            id,
+            pw,
+            (userID) => { //성공자리
+                userData.getUserDataSet(
+                    userID,
+                    (userBasicInfo)=>{ //성공자리
+                        //grade에 따른 콜백을 하나 더 넣어줄 수 있긴하다..
+                        console.log(userBasicInfo);
+                    },
+                    (실패)=>{ //실패자리
+                        console.log(실패)
+                    }
+                
+                )
+            },
+            (실패) => {
+                console.log(실패)
+            }
+        );
+
+
+    </script>
+</body>
+
+</html>
