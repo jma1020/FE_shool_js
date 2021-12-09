@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            opacity: 0.3;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="one">jquery 실습</h1>
+    <p>ㅎㅇㅎㅇ</p>
+    <button class="btn1">클릭애</button>
+    <p class="hi"></p>
+    <img src="" alt="">
+    <br>
+    <textarea name="메모장" id="메모장" cols="30" rows="10"></textarea>
+    <button class="btn2">메모장 내용 경고창으로 </button>
+    <p id="p3">hello</p>
+
+    <!-- 
+    1. items 부모를 찾아 background-color를 파란색으로 바꿔주세요.
+    2. items 2번째 color를 빨간색으로 바꿔주세요
+    3. ul2의 자식인 li요소를 선택하여 1번부터 3번까지 color를 녹색으로 바꿔주세요.
+    4. ul2의 자식인 li요소를 선택하여 7번부터 10번까지 color를 파란색, background-color를 빨간색으로 바꿔주세요. 
+-->
+
+    <div class="wrapper">
+        <h1 class="title">TITLE</h1>
+        <ul>
+            <li class="items">item 1</li>
+            <li class="items">item 2</li>
+            <li class="items">item 3</li>
+        </ul>
+    </div>
+
+    <ul class="ul2">
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+    </ul>
+
+    <div class="one">sadsadsadsadsadsa</div>
+
+    <div class="two blue">hehe</div>
+    <div class="three blue">asdas</div>
+    <p class="blue"></p>
+
+    <div class="four"></div>
+    <div class="four blue"></div>
+
+
+    <div class="box">아아아아
+
+    </div>
+
+    <div class="box2">
+        hello world
+    </div>
+    <button class="btn3">눌러</button>
+<script>
+    $('#one').text('hello 제이쿼리');
+    // $('p').hide()
+    $('.btn1').click(function(){
+        alert('클릭되었다');
+    });
+    $('.hi').html('<strong>실습</strong>중이에요');
+    $('.hi').css('color', 'red');
+    $('.hi').css('backgroundColor', 'blue')
+    //css부분은 카멜표기법을 따릅니다 
+    $('img').attr('src','a.jpg')
+    $('img').attr('data-name','프로필').attr('data-hello','world');
+
+    $('.btn2').click(function(){
+        let 메모장값 = $('#메모장').val();
+        $('#메모장').val('값을 입력하세요')
+        alert(메모장값)
+    });
+
+    $('#p3').css('color','red').css('backgroundColor', 'pink')
+
+    
+ 
+    // 1. items 부모를 찾아 background-color를 파란색으로 바꿔주세요.
+    // 2. items 2번째 color를 빨간색으로 바꿔주세요
+    // 3. ul2의 자식인 li요소를 선택하여 1번부터 3번까지 color를 녹색으로 바꿔주세요.
+    // 4. ul2의 자식인 li요소를 선택하여 7번부터 10번까지 color를 파란색, background-color를 빨간색으로 바꿔주세요. 
+
+
+    $('.items').parent().css('backgroundColor','blue')
+    $('.items').eq(2).css('color','red')
+    $('.ul2').children(':lt(3)').css('color','green')
+    
+    $('.ul2').children(':gt(6)').css('backgroundColor','green')
+
+
+    $("ul").append("<li>hhhhhhhh</li>")
+    $('ul').prepend('<li>aaaaaaa</li>')
+
+    $('ul').after('<h2>aaaaaaa</h2>')
+    $('ul').before('<h2>aaaaaaa</h2>')
+
+    // $('.one').remove()
+
+    $('.one').addClass('important');
+
+    $('.two, .three, p').removeClass('blue');
+    $('.four').toggle('bbbbbb');
+
+    $('.box').fadeOut(3000).fadeIn(2000)
+    $('.box').click(function(){
+        $(this).stop();
+    })
+
+    $('.btn3').click(function() {
+            $('.box2').animate({
+                width: '300px',
+                height: '300px',
+                opacity: 1,
+            }, 'slow');
+        });
+
+
+    //hover - 색 변경하기
+    $("#box").hover(function(){
+        $(this).css("background-color", "yellow");
+    }, function(){
+            $(this).css("background-color", "blue");
+        });
+</script>
+</body>
+</html>

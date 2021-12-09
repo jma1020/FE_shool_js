@@ -191,7 +191,9 @@
         userData.login(
             id,
             pw,
+            //login 성공자리에 userID 는 성공했을 때 userID 를 준다
             (userID) => { //성공자리
+                //getUserDataSet 그렇게 받은 userID 변수를 이용해서 데이터정보들을 출력해주는 역할 함수
                 userData.getUserDataSet(
                     userID,
                     (userBasicInfo)=>{ //성공자리

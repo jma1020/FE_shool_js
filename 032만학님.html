@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <title></title>
+</head>
+<body>
+
+  <button type="button" id="btn_data">클릭해주세요!</button>
+  <div id="data">data</div>
+
+<script>
+
+var loaddata;
+$('#btn_data').click(function() {
+    //$.ajax({경로, 동기화 여부, 성공하면 할 일})
+    //$.ajax({url:'경로', async: false, success:function(result){}})
+    $.ajax({
+        url:'https://raw.githubusercontent.com/paullabkorea/coronaVaccinationStatus/main/data/data.json', 
+        async: true,
+        dataType: 'JSON',
+        success: function(result){
+            $("#data").html("asldkfjaldskfj");
+            $("#data").append(result);
+            console.log(result);
+            // $("#data").text(result);
+            // loaddata = result;
+        }
+    });
+});
+</script>
+</body>
+</html>
