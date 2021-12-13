@@ -14,3 +14,6 @@ fetch('https://raw.githubusercontent.com/paullabkorea/coronaVaccinationStatus/ma
         console.log(json.filter(s => s['시·도별(1)'] === '전국').map(e=> e['1차 접종 퍼센트']));
         return
     })
+
+
+   
