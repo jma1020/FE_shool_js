@@ -1,0 +1,14 @@
+@charset 'utf-8';
+
+body {
+    font-size: 15px;
+    background-color: red;
+    color: aquamarine;
+}
+
+main {
+
+    width: 100%;
+    font-weight: bold;
+    color: aqua;
+}
